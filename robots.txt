@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://photoalisa.github.io/plany-na-vyhodnye/sitemap.xml
