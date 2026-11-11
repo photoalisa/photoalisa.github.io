@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
@@ -6,31 +6,94 @@
 <title>Планы на выходные | Новосибирск</title>
 <meta name="description" content="Каталог событий Новосибирска на ближайшие субботу и воскресенье: выставки, спектакли, концерты, экскурсии — с ценой, возрастом и адресом.">
 <link rel="canonical" href="https://photoalisa.github.io/">
+<meta name="theme-color" content="#FBFAF7">
+<link rel="icon" href="mark.svg" type="image/svg+xml">
 <style>
-  :root { color-scheme: light; }
-  body {
-    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    font-family: "Inter", "Segoe UI", system-ui, sans-serif; background: #f7f9fc; color: #202124;
-    padding: 32px 20px; box-sizing: border-box;
-  }
-  main { max-width: 560px; }
-  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 12px; }
-  p { font-size: 17px; line-height: 1.55; color: #5f6368; margin: 0 0 24px; }
-  a.go {
-    display: inline-block; background: #1a73e8; color: #fff; text-decoration: none;
-    padding: 14px 22px; border-radius: 10px; font-size: 17px; font-weight: 600;
-  }
-  a.go:hover { background: #1765cc; }
-  .note { margin-top: 28px; font-size: 14px; color: #80868b; }
+@font-face{
+  font-family:"Golos Text";
+  src:url("assets/fonts/golos-text-cyrillic.woff2") format("woff2");
+  font-weight:400 700;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+@font-face{
+  font-family:"Golos Text";
+  src:url("assets/fonts/golos-text-latin.woff2") format("woff2");
+  font-weight:400 700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2013-2014,U+2018-201A,U+201C-201E,U+2026,U+2030,U+2116;
+}
+:root{
+  --bg:#FBFAF7;--ink:#14110F;--muted:#6B625A;--accent:#1F5E4B;
+  --accent-hover:#17493A;--accent-press:#123A2E;--line:#E3DDD1;
+  --dsp:"Golos Text",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --txt:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100dvh;display:flex;align-items:center;justify-content:center;
+  padding:32px 20px;background:var(--bg);color:var(--ink);
+  font-family:var(--txt);font-size:16px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+main{width:100%;max-width:620px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand svg{display:block;width:56px;height:56px;border-radius:11px}
+.brand__name{font-family:var(--dsp);font-size:19px;font-weight:600;line-height:1.15}
+.brand__city{font-family:var(--dsp);font-size:12px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);margin-top:3px}
+h1{font-family:var(--dsp);font-size:32px;line-height:1.1;letter-spacing:-.02em;
+  font-weight:700;margin:32px 0 0}
+p.lead{font-size:17px;margin:14px 0 0;max-width:46ch;color:var(--ink)}
+p.lead span{color:var(--muted)}
+.actions{margin-top:28px}
+a.go{
+  display:inline-flex;align-items:center;justify-content:center;min-height:48px;
+  padding:0 24px;border-radius:999px;background:var(--accent);color:#fff;
+  font-family:var(--dsp);font-size:16px;font-weight:600;text-decoration:none;
+  transition:background .12s ease;
+}
+a.go:hover{background:var(--accent-hover)}
+a.go:active{background:var(--accent-press)}
+a.go:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.note{
+  margin:40px 0 0;padding-top:20px;border-top:1px solid var(--line);
+  font-size:13px;line-height:1.5;color:var(--muted);
+}
+.note a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(31,94,75,.3)}
+.note a:hover{color:var(--accent-hover)}
+.note a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+@media (max-width:520px){
+  h1{font-size:26px;margin-top:26px}
+  p.lead{font-size:16px}
+  a.go{width:100%}
+}
 </style>
 </head>
 <body>
 <main>
-  <h1>Планы на выходные: Новосибирск</h1>
-  <p>Каталог событий на ближайшие субботу и воскресенье: выставки, спектакли, концерты и экскурсии
-     с ценой, возрастом и адресом. Собирается автоматически два раза в неделю.</p>
-  <a class="go" href="/plany-na-vyhodnye/">Открыть каталог</a>
-  <p class="note">Некоммерческий проект. Сайт каталога: photoalisa.github.io/plany-na-vyhodnye</p>
+  <div class="brand">
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+      <rect width="64" height="64" rx="13" fill="#1F5E4B"/>
+      <path d="M25.2 12.5h4.6l-1.4 30.4h-5.6z" fill="#FFFFFF"/>
+      <path d="M38.8 12.5h-4.6l1.4 30.4h5.6z" fill="#FFFFFF"/>
+      <rect x="20.6" y="23.8" width="22.8" height="3.8" fill="#FFFFFF"/>
+      <rect x="9" y="48.4" width="46" height="2.8" rx="1.4" fill="#FFFFFF"/>
+    </svg>
+    <div>
+      <div class="brand__name">Планы на выходные</div>
+      <div class="brand__city">Новосибирск</div>
+    </div>
+  </div>
+
+  <h1>Куда пойти на выходных</h1>
+  <p class="lead">Выставки, спектакли, концерты и прогулки на ближайшие субботу и воскресенье —
+    с ценой, возрастом и адресом. <span>Подборка обновляется автоматически по понедельникам
+    и пятницам.</span></p>
+
+  <div class="actions">
+    <a class="go" href="/plany-na-vyhodnye/">Открыть каталог</a>
+  </div>
+
+  <p class="note">Некоммерческий проект. Каталог событий:
+    <a href="/plany-na-vyhodnye/">photoalisa.github.io/plany-na-vyhodnye</a></p>
 </main>
 </body>
 </html>
