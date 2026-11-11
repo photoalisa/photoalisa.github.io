@@ -1,11 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Планы на выходные | Новосибирск</title>
 <meta name="description" content="Каталог событий Новосибирска на ближайшие субботу и воскресенье: выставки, спектакли, концерты, экскурсии — с ценой, возрастом и адресом.">
-<link rel="canonical" href="https://photoalisa.github.io/">
 <meta name="theme-color" content="#FBFAF7">
 <link rel="icon" href="mark.svg" type="image/svg+xml">
 <style>
@@ -21,55 +20,85 @@
 }
 :root{
   --bg:#FBFAF7;--ink:#14110F;--muted:#6B625A;--accent:#1F5E4B;
-  --accent-hover:#17493A;--accent-press:#123A2E;--line:#E3DDD1;
+  --accent-hover:#17493A;--accent-press:#123A2E;--line:#E3DDD1;--media:#F1EEE7;
   --dsp:"Golos Text",-apple-system,"Segoe UI",Roboto,sans-serif;
   --txt:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   color-scheme:light;
 }
 *{box-sizing:border-box}
 body{
-  margin:0;min-height:100dvh;display:flex;align-items:center;justify-content:center;
-  padding:32px 20px;background:var(--bg);color:var(--ink);
-  font-family:var(--txt);font-size:16px;line-height:1.55;
+  margin:0;min-height:100dvh;display:flex;flex-direction:column;background:var(--bg);
+  color:var(--ink);font-family:var(--txt);font-size:16px;line-height:1.55;
   -webkit-font-smoothing:antialiased;
 }
-main{width:100%;max-width:620px}
-.brand{display:flex;align-items:center;gap:14px}
-.brand svg{display:block;width:56px;height:56px;border-radius:11px}
-.brand__name{font-family:var(--dsp);font-size:19px;font-weight:600;line-height:1.15}
-.brand__city{font-family:var(--dsp);font-size:12px;font-weight:600;letter-spacing:.12em;
+.wrap{width:100%;max-width:1220px;margin:0 auto;padding:0 24px}
+
+.top{padding-top:26px}
+.brand{display:inline-flex;align-items:center;gap:14px;color:inherit;text-decoration:none}
+.brand svg{display:block;width:48px;height:48px;border-radius:10px}
+.brand__name{font-family:var(--dsp);font-size:18px;font-weight:600;line-height:1.15}
+.brand__city{font-family:var(--dsp);font-size:11px;font-weight:600;letter-spacing:.12em;
   text-transform:uppercase;color:var(--muted);margin-top:3px}
-h1{font-family:var(--dsp);font-size:32px;line-height:1.1;letter-spacing:-.02em;
-  font-weight:700;margin:32px 0 0}
-p.lead{font-size:17px;margin:14px 0 0;max-width:46ch;color:var(--ink)}
-p.lead span{color:var(--muted)}
-.actions{margin-top:28px}
+
+.hero{position:relative;flex:1 0 auto;display:flex;align-items:center;justify-content:center;
+  padding:clamp(40px,7vh,84px) 0 clamp(52px,8vh,96px)}
+.hero__inner{position:relative;z-index:2;width:100%;max-width:680px;margin:0 auto;text-align:center}
+
+.eyebrow{margin:0;font-family:var(--dsp);font-size:12px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--dsp);font-weight:700;font-size:clamp(34px,5.6vw,68px);line-height:1.05;
+  letter-spacing:-.03em;margin:18px 0 0}
+h1 span{color:var(--muted)}
+p.lead{font-size:clamp(16px,1.35vw,19px);line-height:1.5;color:var(--muted);
+  max-width:52ch;margin:20px auto 0}
+
+.actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  margin-top:30px}
 a.go{
-  display:inline-flex;align-items:center;justify-content:center;min-height:48px;
-  padding:0 24px;border-radius:999px;background:var(--accent);color:#fff;
+  display:inline-flex;align-items:center;justify-content:center;min-height:52px;
+  padding:0 30px;border-radius:999px;background:var(--accent);color:#fff;
   font-family:var(--dsp);font-size:16px;font-weight:600;text-decoration:none;
   transition:background .12s ease;
 }
 a.go:hover{background:var(--accent-hover)}
 a.go:active{background:var(--accent-press)}
 a.go:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
-.note{
-  margin:40px 0 0;padding-top:20px;border-top:1px solid var(--line);
-  font-size:13px;line-height:1.5;color:var(--muted);
+
+.ticks{display:flex;align-items:center;justify-content:center;gap:8px;margin:18px 0 0;
+  font-size:14px;color:var(--muted)}
+.ticks svg{display:block;flex:none}
+
+.shot{position:absolute;margin:0;z-index:1;border:1px solid var(--line);border-radius:6px;
+  background:var(--media);overflow:hidden}
+.shot img{display:block;width:100%;height:100%;object-fit:cover}
+.shot--a{left:0;top:2px;width:clamp(150px,15.5vw,212px);aspect-ratio:16/9}
+.shot--b{left:3%;bottom:-6px;width:clamp(118px,11.5vw,158px);aspect-ratio:8/5}
+.shot--c{right:0;top:34px;width:clamp(158px,16.5vw,226px);aspect-ratio:16/9}
+.shot--d{right:4%;bottom:6px;width:clamp(128px,13.5vw,182px);aspect-ratio:16/9}
+
+.foot{flex:none;padding-bottom:40px}
+.foot__inner{max-width:680px;margin:0 auto;padding-top:20px;border-top:1px solid var(--line);
+  font-size:13px;line-height:1.5;color:var(--muted)}
+.foot a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(31,94,75,.3)}
+.foot a:hover{color:var(--accent-hover)}
+.foot a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+
+@media (max-width:1079px){
+  .shot{display:none}
 }
-.note a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(31,94,75,.3)}
-.note a:hover{color:var(--accent-hover)}
-.note a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
-@media (max-width:520px){
-  h1{font-size:26px;margin-top:26px}
-  p.lead{font-size:16px}
+@media (max-width:600px){
   a.go{width:100%}
+  .actions{margin-top:26px}
+  .ticks{align-items:flex-start;text-align:left;max-width:30ch;margin-left:auto;margin-right:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  a.go{transition:none}
 }
 </style>
 </head>
 <body>
-<main>
-  <div class="brand">
+<div class="wrap top">
+  <a class="brand" href="/">
     <svg viewBox="0 0 64 64" aria-hidden="true">
       <rect width="64" height="64" rx="13" fill="#1F5E4B"/>
       <path d="M25.2 12.5h4.6l-1.4 30.4h-5.6z" fill="#FFFFFF"/>
@@ -77,23 +106,40 @@ a.go:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
       <rect x="20.6" y="23.8" width="22.8" height="3.8" fill="#FFFFFF"/>
       <rect x="9" y="48.4" width="46" height="2.8" rx="1.4" fill="#FFFFFF"/>
     </svg>
-    <div>
-      <div class="brand__name">Планы на выходные</div>
-      <div class="brand__city">Новосибирск</div>
+    <span>
+      <span class="brand__name">Планы на выходные</span>
+      <span class="brand__city">Новосибирск</span>
+    </span>
+  </a>
+</div>
+
+<section class="hero">
+  <div class="wrap" style="position:relative">
+    <figure class="shot shot--a"><img src="assets/hero-a.jpg" alt="Скетч четвёртого моста через Обь" width="520" height="293"></figure>
+    <figure class="shot shot--b"><img src="assets/hero-b.jpg" alt="Скетч набережной: театр оперы и мост" width="440" height="275"></figure>
+    <figure class="shot shot--c"><img src="assets/hero-c.jpg" alt="Скетч набережной с фонарями и мостом" width="560" height="315"></figure>
+    <figure class="shot shot--d"><img src="assets/hero-d.jpg" alt="Скетч вантового моста с линией города" width="460" height="259"></figure>
+
+    <div class="hero__inner">
+      <p class="eyebrow">Некоммерческий проект</p>
+      <h1>Куда <span>пойти</span> на выходных</h1>
+      <p class="lead">Выставки, спектакли, концерты и прогулки на ближайшие субботу и воскресенье — с ценой, возрастом и адресом.</p>
+      <div class="actions">
+        <a class="go" href="/plany-na-vyhodnye/">Открыть каталог</a>
+      </div>
+      <p class="ticks">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="#1F5E4B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3.2L13 5.2"/></svg>
+        <span>Подборка обновляется по понедельникам и пятницам</span>
+      </p>
     </div>
   </div>
+</section>
 
-  <h1>Куда пойти на выходных</h1>
-  <p class="lead">Выставки, спектакли, концерты и прогулки на ближайшие субботу и воскресенье —
-    с ценой, возрастом и адресом. <span>Подборка обновляется автоматически по понедельникам
-    и пятницам.</span></p>
-
-  <div class="actions">
-    <a class="go" href="/plany-na-vyhodnye/">Открыть каталог</a>
+<div class="wrap foot">
+  <div class="foot__inner">
+    Некоммерческий проект. Каталог событий:
+    <a href="/plany-na-vyhodnye/">photoalisa.github.io/plany-na-vyhodnye</a>
   </div>
-
-  <p class="note">Некоммерческий проект. Каталог событий:
-    <a href="/plany-na-vyhodnye/">photoalisa.github.io/plany-na-vyhodnye</a></p>
-</main>
+</div>
 </body>
 </html>
